@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>cAPTCHA</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
+    <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/cAPTCHA.css') }}">
+
+</head>
+<body>
+
+
+<div class="captcha_box">
+    <div class="top_div">
+        <div class="type_text">
+            <input type="text" class="captcha_text" placeholder="Type the below text">
+            <div class="blue_line"></div>
+        </div>
+
+        <div class="captcha_img">
+            {% for cAPTCHA in cAPTCHA_data %}
+            <img src="{{url_for('send_uploaded_file', filename = cAPTCHA.file_name )}}" onerror="this.onerror=null;this.src='img_14.jpeg';" alt="" class="image">
+            {% endfor %}
+        </div>
+    </div>
+    <div class="division_line"></div>
+    <div class="bottom_div">
+        <div class="m_buttons">
+            <button id="material_icons"><span class="material-icons">refresh</span></button>
+            <button id="material_icons"><span class="material-icons">info</span></button>
+        </div>
+        <form action="/upload-image" method="POST" enctype="multipart/form-data" >
+
+            <input type="file" name="cAPTCHA_image" id="btn_upload" onchange="form.submit()" style="display:none;">
+        </form>
+
+        <button class="n_button" onclick="document.getElementById('btn_upload').click()">
+                Upload
+            </button>
+
+
+
+    </div>
+</div>
+
+
+<label class="answer">
+    Predicted text: 
+    {% for cAPTCHA in cAPTCHA_data %}
+    {{cAPTCHA.captcha_text}}
+    {% endfor %}
+</label>
+
+</body>
+
+</html>
