@@ -2,7 +2,6 @@ Sure, here are the `readme.md` and `requirements.txt` files for your project:
 
 ### `readme.md`
 
-```markdown
 # CAPTCHA Recognition with Deep Learning
 
 This project is a web application for recognizing CAPTCHA images using a pre-trained deep learning model. It uses Flask for the web interface and TensorFlow/Keras for the CAPTCHA recognition.
