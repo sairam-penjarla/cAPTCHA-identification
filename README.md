@@ -24,8 +24,8 @@ This project is a web application for recognizing CAPTCHA images using a pre-tra
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/your-username/captcha-recognition.git
-   cd captcha-recognition
+   git clone https://github.com/sairam-penjarla/cAPTCHA-identification.git
+   cd cAPTCHA-identification
    ```
 
 2. Install the required dependencies:
